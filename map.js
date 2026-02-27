@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const bounds = [[0, 0], [1080, 1920]];
 
     // Path to the provided static map image.
-    const imageUrl = 'https://github.com/Wezzeso/Interactive-map-of-Kazakhstan/blob/64cc9dda70b92a32ccec48ae99889530a6e8a583/Map.png';
+    const imageUrl = '/Map.png';
 
     // 3. Add Image Overlay
     L.imageOverlay(imageUrl, bounds).addTo(map);
