@@ -86,8 +86,8 @@ body {
     height: 100%;
     border-radius: 50%;
     background: var(--clr-gold-light);
-    opacity: 0.6;
-    animation: pulse 2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+    opacity: 0.5;
+    animation: pulse 3s infinite cubic-bezier(0.25, 0.46, 0.45, 0.94);
     z-index: -1;
 }
 
@@ -138,11 +138,11 @@ body {
 @keyframes pulse {
     0% {
         transform: translate(-50%, -50%) scale(1);
-        opacity: 0.8;
+        opacity: 0.7;
     }
 
     100% {
-        transform: translate(-50%, -50%) scale(2.5);
+        transform: translate(-50%, -50%) scale(1.6);
         opacity: 0;
     }
 }
@@ -276,15 +276,18 @@ body {
 .map-side-panel {
     position: absolute;
     top: 0;
-    left: -400px;
+    left: 0;
+    transform: translateX(-100%);
     width: 400px;
+    min-width: 300px;
+    max-width: 90vw;
     height: 100%;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 4px 0 24px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    transition: left 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     display: flex;
     flex-direction: column;
     overflow-y: auto;
@@ -292,7 +295,7 @@ body {
 }
 
 .map-side-panel.active {
-    left: 0;
+    transform: translateX(0);
 }
 
 .close-panel-btn {
@@ -319,6 +322,10 @@ body {
     background: var(--clr-gold-mid);
     color: var(--clr-white);
     transform: rotate(90deg);
+}
+
+.mobile-drag-pill {
+    display: none;
 }
 
 .side-panel-content-body {
@@ -372,9 +379,124 @@ body {
     background: rgba(0, 0, 0, 0.2);
 }
 
+/* ── Panel Resizer ── */
+.panel-resizer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* Right edge of the side panel */
+    width: 8px;
+    /* Slightly wider for easier grabbing */
+    height: 100%;
+    cursor: ew-resize;
+    z-index: 2000;
+    background-color: transparent;
+    transition: background-color 0.2s ease;
+}
+
+.panel-resizer:hover,
+.panel-resizer.is-resizing {
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 2px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+body.is-resizing {
+    cursor: ew-resize !important;
+    user-select: none;
+}
+
 @media (max-width: 768px) {
     .map-side-panel {
-        width: 100%;
-        left: -100%;
+        width: 100% !important;
+        /* Forces 100% on mobile despite JS inline styles */
+        height: 90vh !important;
+        /* Total allowed height, JS will push it down with transform */
+        top: auto;
+        bottom: 0;
+        left: 0;
+        transform: translateY(100%) !important;
+        background: #ffffff;
+        color: var(--clr-text);
+        border-right: none;
+        border-top: none;
+        border-radius: 20px 20px 0 0;
+        transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+        padding-top: 15px;
+        /* Space for the drag pill */
+        box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
+        /* Soft shadow above */
+        z-index: 2000;
+    }
+
+    .map-side-panel.active {
+        /* Default active state will be overridden by inline styles from JS for peek view */
+        transform: translateY(65%) !important;
+        /* ~35% peek view if JS fails */
+    }
+
+    /* Disable transition when dragging for smooth feel */
+    .map-side-panel.dragging {
+        transition: none;
+    }
+
+    .mobile-drag-pill {
+        display: block;
+        width: 36px;
+        height: 4px;
+        background: rgba(0, 0, 0, 0.15);
+        border-radius: 2px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+        flex-shrink: 0;
+    }
+
+    .panel-resizer {
+        display: none;
+        /* Hide resizer on mobile */
+    }
+
+    .close-panel-btn {
+        display: none;
+        /* Hide X button for sleek look */
+    }
+
+    .side-panel-content-body {
+        padding: 5px 20px 25px 20px;
+    }
+
+    .map-side-panel .map-popup-image-wrapper {
+        border-radius: 12px;
+        height: 180px;
+        margin: 0 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        /* Restore soft shadow */
+    }
+
+    .map-side-panel .map-popup-title {
+        color: var(--clr-text);
+        border-bottom: none;
+        margin-top: 18px;
+        font-size: 1.4rem;
+        padding-bottom: 5px;
+    }
+
+    .map-side-panel .map-popup-desc {
+        color: var(--clr-text-muted);
+        font-size: 1rem;
+        margin-bottom: 20px;
+    }
+
+    .map-popup-tours h4 {
+        color: var(--clr-gold-mid);
+    }
+
+    .map-popup-tours a {
+        background: var(--clr-cream);
+        color: var(--clr-text);
+        border: 1px solid transparent;
+    }
+
+    .map-popup-tours a::before {
+        color: var(--clr-gold-mid);
     }
 }

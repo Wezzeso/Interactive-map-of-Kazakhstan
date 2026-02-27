@@ -450,7 +450,18 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             `;
 
+            // Check if mobile view
+            if (window.innerWidth <= 768) {
+                // Set initial peek position (~65% down, which means 35% visible)
+                panel.style.transform = `translateY(65%)`;
+            } else {
+                panel.style.transform = ''; // Clear inline transform on desktop
+            }
+
             panel.classList.add('active');
+
+            // Re-center map slightly so point is visible
+            map.panTo(landmark.point, { animate: true, duration: 0.5 });
         });
 
         // Store the marker so we can adjust it later
@@ -469,6 +480,113 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('close-panel').addEventListener('click', function () {
         document.getElementById('side-panel').classList.remove('active');
     });
+
+    // Panel Resizing Logic
+    const panel = document.getElementById('side-panel');
+    const resizer = document.getElementById('panel-resizer');
+    const dragPill = document.querySelector('.mobile-drag-pill');
+    let isResizing = false;
+    let isDraggingMobile = false;
+    let startY = 0;
+    let currentY = 0;
+
+    // Desktop horizontal resizing
+    resizer.addEventListener('mousedown', function (e) {
+        if (window.innerWidth <= 768) return;
+        isResizing = true;
+        document.body.classList.add('is-resizing');
+        resizer.classList.add('is-resizing');
+        e.preventDefault(); // Prevent text selection while dragging
+    });
+
+    document.addEventListener('mousemove', function (e) {
+        if (!isResizing) return;
+
+        let newWidth = e.clientX;
+
+        // Define width constraints
+        const minWidth = 300;
+        const maxWidth = Math.min(800, window.innerWidth - 50);
+
+        if (newWidth < minWidth) newWidth = minWidth;
+        if (newWidth > maxWidth) newWidth = maxWidth;
+
+        panel.style.width = newWidth + 'px';
+    });
+
+    document.addEventListener('mouseup', function () {
+        if (isResizing) {
+            isResizing = false;
+            document.body.classList.remove('is-resizing');
+            resizer.classList.remove('is-resizing');
+        }
+    });
+
+    // Mobile vertical dragging (touch events)
+    function handleDragStart(e) {
+        if (window.innerWidth > 768) return;
+        isDraggingMobile = true;
+        panel.classList.add('dragging');
+
+        // Support both touch and mouse
+        startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
+
+        // Get current transform if any, default to 65 (peek) or 0 (full)
+        const style = window.getComputedStyle(panel);
+        const matrix = new WebKitCSSMatrix(style.transform);
+        currentY = matrix.m42;
+    }
+
+    function handleDragMove(e) {
+        if (!isDraggingMobile) return;
+        e.preventDefault(); // Prevent scrolling while dragging
+
+        const y = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+        const deltaY = y - startY;
+
+        // Convert to percentage based on window height
+        let percentage = ((currentY + deltaY) / window.innerHeight) * 100;
+
+        // Constraints
+        if (percentage < 0) percentage = 0; // Don't go above full open
+        if (percentage > 85) percentage = 85; // Almost closed
+
+        panel.style.transform = `translateY(${percentage}%)`;
+    }
+
+    function handleDragEnd() {
+        if (!isDraggingMobile) return;
+        isDraggingMobile = false;
+        panel.classList.remove('dragging');
+
+        // Snap to positions based on velocity/current position
+        const style = window.getComputedStyle(panel);
+        const matrix = new WebKitCSSMatrix(style.transform);
+        const yPos = matrix.m42;
+        const percentage = (yPos / window.innerHeight) * 100;
+
+        // Over 50% down = go to peek mode (65%)
+        // Under 50% = go full screen (0%)
+        // Over 80% = close completely
+
+        if (percentage > 80) {
+            panel.classList.remove('active');
+            panel.style.transform = ''; // reset
+        } else if (percentage > 40) {
+            panel.style.transform = `translateY(65%)`; // Peek
+        } else {
+            panel.style.transform = `translateY(0%)`; // Full
+        }
+    }
+
+    dragPill.addEventListener('mousedown', handleDragStart);
+    dragPill.addEventListener('touchstart', handleDragStart, { passive: false });
+
+    document.addEventListener('mousemove', handleDragMove);
+    document.addEventListener('touchmove', handleDragMove, { passive: false });
+
+    document.addEventListener('mouseup', handleDragEnd);
+    document.addEventListener('touchend', handleDragEnd);
 
     // Handle zoom changes to scale markers
     map.on('zoomend', function () {
