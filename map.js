@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const bounds = [[0, 0], [1080, 1920]];
 
     // Path to the provided static map image.
-    const imageUrl = '../Map/Map.png';
+    const imageUrl = 'Map.png';
 
     // 3. Add Image Overlay
     L.imageOverlay(imageUrl, bounds).addTo(map);
