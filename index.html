@@ -13,9 +13,20 @@
     <!-- Custom Map Styles -->
     <link rel="stylesheet" href="style.css">
 </head>
+<!--  -->
 
 <body>
     <div id="interactive-map"></div>
+
+    <!-- Side Panel -->
+    <div id="side-panel" class="map-side-panel">
+        <button id="close-panel" class="close-panel-btn">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <div id="side-panel-content">
+            <!-- Content dynamically injected here -->
+        </div>
+    </div>
 
     <!-- Leaflet JS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

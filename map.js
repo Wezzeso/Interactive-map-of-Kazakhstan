@@ -436,22 +436,21 @@ document.addEventListener('DOMContentLoaded', function () {
             `;
         }
 
-        const popupContent = `
-            <div class="map-popup-inner">
+        // Instead of bindPopup, open the side panel
+        marker.on('click', function () {
+            const panel = document.getElementById('side-panel');
+            const panelContent = document.getElementById('side-panel-content');
+
+            panelContent.innerHTML = `
                 ${imageHtml}
-                <div class="map-popup-content-body">
+                <div class="side-panel-content-body">
                     <h3 class="map-popup-title">${landmark.name}</h3>
                     <p class="map-popup-desc">${landmark.description}</p>
                     ${toursHtml}
                 </div>
-            </div>
-        `;
+            `;
 
-        // Bind popup to the marker
-        marker.bindPopup(popupContent, {
-            maxWidth: 320,
-            closeButton: true,
-            autoPanPadding: [50, 50]
+            panel.classList.add('active');
         });
 
         // Store the marker so we can adjust it later
@@ -461,7 +460,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Helper Tool for YOU: Click anywhere on the map to find the Coordinates!
     // Open Developer Tools (F12) -> Console to see the output.
     map.on('click', function (e) {
+        // Close side panel when clicking on the map
+        document.getElementById('side-panel').classList.remove('active');
         console.log("📍 Coordinate point clicked: [" + e.latlng.lat.toFixed(1) + ", " + e.latlng.lng.toFixed(1) + "]");
+    });
+
+    // Close panel with button
+    document.getElementById('close-panel').addEventListener('click', function () {
+        document.getElementById('side-panel').classList.remove('active');
     });
 
     // Handle zoom changes to scale markers
