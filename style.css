@@ -408,30 +408,44 @@ body.is-resizing {
 @media (max-width: 768px) {
     .map-side-panel {
         width: 100% !important;
-        /* Forces 100% on mobile despite JS inline styles */
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+        /* Forces absolute full width on mobile inside the iframe */
         height: 90vh !important;
-        /* Total allowed height, JS will push it down with transform */
+        /* Allow panel to fill entire screen if dragged up */
         top: auto;
-        bottom: 0;
-        left: 0;
-        transform: translateY(100%) !important;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        margin: 0;
+        transform: translateY(120%) !important;
         background: #ffffff;
         color: var(--clr-text);
         border-right: none;
         border-top: none;
         border-radius: 20px 20px 0 0;
         transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
-        padding-top: 15px;
-        /* Space for the drag pill */
+        padding-top: 5px;
+        /* Less space needed on top */
         box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
         /* Soft shadow above */
         z-index: 2000;
+        /* When not full screen, hide overflow so we don't double-scroll */
+        overflow-y: hidden;
+        overflow-x: hidden;
     }
 
     .map-side-panel.active {
-        /* Default active state will be overridden by inline styles from JS for peek view */
-        transform: translateY(65%) !important;
-        /* ~35% peek view if JS fails */
+        /* Default peek state */
+        transform: translateY(50vh) !important;
+        /* ~40vh peek view initially */
+    }
+
+    /* When expanded fully, allow internal scrolling */
+    .map-side-panel.expanded {
+        transform: translateY(0%) !important;
+        /* Covers exactly 90% and touches the bottom */
+        overflow-y: auto;
     }
 
     /* Disable transition when dragging for smooth feel */
@@ -441,12 +455,11 @@ body.is-resizing {
 
     .mobile-drag-pill {
         display: block;
-        width: 36px;
-        height: 4px;
+        width: 48px;
+        height: 6px;
         background: rgba(0, 0, 0, 0.15);
-        border-radius: 2px;
-        margin: 0 auto;
-        margin-bottom: 20px;
+        border-radius: 3px;
+        margin: 15px auto 20px auto;
         flex-shrink: 0;
     }
 
@@ -457,7 +470,7 @@ body.is-resizing {
 
     .close-panel-btn {
         display: none;
-        /* Hide X button for sleek look */
+        /* Provide direct way to collapse on mobile */
     }
 
     .side-panel-content-body {

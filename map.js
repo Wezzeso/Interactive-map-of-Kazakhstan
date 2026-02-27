@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const bounds = [[0, 0], [1080, 1920]];
 
     // Path to the provided static map image.
-    const imageUrl = '/Map.png';
+    const imageUrl = 'Map.png';
 
     // 3. Add Image Overlay
     L.imageOverlay(imageUrl, bounds).addTo(map);
@@ -452,10 +452,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Check if mobile view
             if (window.innerWidth <= 768) {
-                // Set initial peek position (~65% down, which means 35% visible)
-                panel.style.transform = `translateY(65%)`;
+                // Clear any previous desktop transforms or expanded classes
+                panel.style.transform = '';
+                panel.classList.remove('expanded');
+
+                // Reset scroll position
+                panel.scrollTop = 0;
             } else {
                 panel.style.transform = ''; // Clear inline transform on desktop
+                panel.classList.remove('expanded');
             }
 
             panel.classList.add('active');
@@ -486,9 +491,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const resizer = document.getElementById('panel-resizer');
     const dragPill = document.querySelector('.mobile-drag-pill');
     let isResizing = false;
-    let isDraggingMobile = false;
+    let isDraggingPill = false;
+    let isDraggingContent = false;
     let startY = 0;
     let currentY = 0;
+    let startScrollTop = 0;
 
     // Desktop horizontal resizing
     resizer.addEventListener('mousedown', function (e) {
@@ -523,70 +530,131 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     // Mobile vertical dragging (touch events)
-    function handleDragStart(e) {
+
+    // 1. Pill Dragging
+    function handlePillDragStart(e) {
         if (window.innerWidth > 768) return;
-        isDraggingMobile = true;
+        isDraggingPill = true;
         panel.classList.add('dragging');
-
-        // Support both touch and mouse
         startY = e.type === 'touchstart' ? e.touches[0].clientY : e.clientY;
-
-        // Get current transform if any, default to 65 (peek) or 0 (full)
         const style = window.getComputedStyle(panel);
         const matrix = new WebKitCSSMatrix(style.transform);
         currentY = matrix.m42;
+        // e.preventDefault(); // Prevents touch scrolling while dragging pill
     }
 
     function handleDragMove(e) {
-        if (!isDraggingMobile) return;
-        e.preventDefault(); // Prevent scrolling while dragging
+        if (isDraggingPill) {
+            e.preventDefault();
+            const y = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
+            let deltaY = y - startY;
+            let targetY = currentY + deltaY;
 
-        const y = e.type === 'touchmove' ? e.touches[0].clientY : e.clientY;
-        const deltaY = y - startY;
+            // Convert to percentage for smooth tracking
+            let percentage = (targetY / window.innerHeight) * 100;
+            if (percentage < 0) percentage = 0;
 
-        // Convert to percentage based on window height
-        let percentage = ((currentY + deltaY) / window.innerHeight) * 100;
-
-        // Constraints
-        if (percentage < 0) percentage = 0; // Don't go above full open
-        if (percentage > 85) percentage = 85; // Almost closed
-
-        panel.style.transform = `translateY(${percentage}%)`;
-    }
-
-    function handleDragEnd() {
-        if (!isDraggingMobile) return;
-        isDraggingMobile = false;
-        panel.classList.remove('dragging');
-
-        // Snap to positions based on velocity/current position
-        const style = window.getComputedStyle(panel);
-        const matrix = new WebKitCSSMatrix(style.transform);
-        const yPos = matrix.m42;
-        const percentage = (yPos / window.innerHeight) * 100;
-
-        // Over 50% down = go to peek mode (65%)
-        // Under 50% = go full screen (0%)
-        // Over 80% = close completely
-
-        if (percentage > 80) {
-            panel.classList.remove('active');
-            panel.style.transform = ''; // reset
-        } else if (percentage > 40) {
-            panel.style.transform = `translateY(65%)`; // Peek
-        } else {
-            panel.style.transform = `translateY(0%)`; // Full
+            panel.style.transform = `translateY(${percentage}%)`;
+        } else if (isDraggingContent) {
+            // Check if we're pulling down while at the top of the content
+            const y = e.touches[0].clientY;
+            const deltaY = y - startY;
+            if (panel.scrollTop <= 0 && deltaY > 0 && panel.classList.contains('expanded')) {
+                // Custom drag down from top of scroll
+                e.preventDefault();
+                panel.classList.add('dragging');
+                panel.style.transform = `translateY(${deltaY}px)`;
+            }
         }
     }
 
-    dragPill.addEventListener('mousedown', handleDragStart);
-    dragPill.addEventListener('touchstart', handleDragStart, { passive: false });
+    function handleDragEnd(e) {
+        if (isDraggingPill) {
+            isDraggingPill = false;
+            panel.classList.remove('dragging');
 
-    document.addEventListener('mousemove', handleDragMove);
-    document.addEventListener('touchmove', handleDragMove, { passive: false });
+            let endY = 0;
+            if (e && e.type && e.type.includes('touch')) {
+                endY = e.changedTouches[0].clientY;
+            } else if (e) {
+                endY = e.clientY;
+            } else {
+                endY = startY;
+            }
+
+            const deltaY = endY - startY;
+
+            if (deltaY > 30) {
+                // Dragged down -> close completely
+                panel.classList.remove('active', 'expanded');
+            } else if (deltaY < -30) {
+                // Dragged up -> expand completely
+                panel.classList.add('active', 'expanded');
+            } else {
+                // Snap based on position if they just let go
+                const style = window.getComputedStyle(panel);
+                const matrix = new WebKitCSSMatrix(style.transform);
+                const pct = (matrix.m42 / window.innerHeight) * 100;
+
+                if (pct > 75) {
+                    panel.classList.remove('active', 'expanded');
+                } else if (pct > 30) {
+                    panel.classList.add('active');
+                    panel.classList.remove('expanded');
+                } else {
+                    panel.classList.add('expanded');
+                }
+            }
+            panel.style.transform = ''; // reset inline style
+        } else if (isDraggingContent) {
+            isDraggingContent = false;
+            panel.classList.remove('dragging');
+
+            if (startScrollTop <= 0) {
+                if (e && e.changedTouches && e.changedTouches.length > 0) {
+                    const endY = e.changedTouches[0].clientY;
+                    const deltaY = endY - startY;
+
+                    if (deltaY > 50) {
+                        // significant pull down from top -> close completely
+                        panel.classList.remove('active', 'expanded');
+                    }
+                }
+            }
+            panel.style.transform = '';
+        }
+    }
+
+    // 2. Content Scrolling Handlers
+    panel.addEventListener('touchstart', (e) => {
+        if (window.innerWidth > 768 || e.target === dragPill) return;
+        isDraggingContent = true;
+        startY = e.touches[0].clientY;
+        startScrollTop = panel.scrollTop;
+    }, { passive: true });
+
+    panel.addEventListener('touchmove', (e) => {
+        if (window.innerWidth <= 768 && !panel.classList.contains('expanded')) {
+            // Scroll attempt while in peek mode -> instantly expand
+            panel.classList.add('expanded');
+            panel.style.transform = '';
+        } else {
+            handleDragMove(e);
+        }
+    }, { passive: false });
+
+    panel.addEventListener('touchend', handleDragEnd);
+
+    // Pill event listeners
+    dragPill.addEventListener('mousedown', handlePillDragStart);
+    dragPill.addEventListener('touchstart', handlePillDragStart, { passive: true });
+
+    document.addEventListener('mousemove', handleDragMove, { passive: false });
+    document.addEventListener('touchmove', (e) => {
+        if (isDraggingPill) handleDragMove(e);
+    }, { passive: false });
 
     document.addEventListener('mouseup', handleDragEnd);
-    document.addEventListener('touchend', handleDragEnd);
 
     // Handle zoom changes to scale markers
     map.on('zoomend', function () {
