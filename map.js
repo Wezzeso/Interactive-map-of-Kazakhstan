@@ -122,7 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A famous rock formation in the Burabay National Park, rising from the waters of Lake Burabay and resembling a sphinx.',
             point: [916.3, 1058.0],
             color: 'green',
-            image: 'https://sheftour.kz/wp-content/uploads/2026/02/zhumbaktas-rock-burabay.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/zhumbaktas-rock.webp',
             tours: [
                 { title: 'Astana & Burabay: 5-Day Tour', url: 'https://sheftour.kz/astana/' },
                 { title: 'Astana – Burabay', url: 'https://sheftour.kz/kazakhstan-dmc/astana-burabay/' }
@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A scenic mountain in the Burabay resort zone, offering panoramic views of the surrounding lakes and forests.',
             point: [959.3, 1092.3],
             color: 'green',
-            image: 'https://sheftour.kz/wp-content/uploads/2026/02/bolektau-mountain-burabay.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/boat-station-mount-bolektau.webp',
             tours: [
                 { title: 'Astana & Burabay: 5-Day Tour', url: 'https://sheftour.kz/astana/' },
                 { title: 'Astana – Burabay', url: 'https://sheftour.kz/kazakhstan-dmc/astana-burabay/' }
@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A stunning turquoise lake nestled among pine forests in the Burabay National Park.',
             point: [885.5, 1094.3],
             color: 'green',
-            image: 'https://sheftour.kz/wp-content/uploads/2026/02/blue-lagoon-burabay.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/blue-lagoon.webp',
             tours: [
                 { title: 'Astana & Burabay: 5-Day Tour', url: 'https://sheftour.kz/astana/' },
                 { title: 'Astana – Burabay', url: 'https://sheftour.kz/kazakhstan-dmc/astana-burabay/' }
@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'The local market in Burabay where visitors can find traditional Kazakh souvenirs, crafts, and local delicacies.',
             point: [881.0, 1128.8],
             color: 'green',
-            image: 'https://sheftour.kz/wp-content/uploads/2026/02/burabai-bazar.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/burabay-center-local-bazaar.webp',
             tours: [
                 { title: 'Astana & Burabay: 5-Day Tour', url: 'https://sheftour.kz/astana/' },
                 { title: 'Astana – Burabay', url: 'https://sheftour.kz/kazakhstan-dmc/astana-burabay/' }
@@ -170,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A historic cave in the Burabay area, named after the Kazakh khan Kenesary Kasymov who once used it as a hideout.',
             point: [930.8, 1145.0],
             color: 'green',
-            image: 'https://sheftour.kz/wp-content/uploads/2026/02/kenesary-cave-burabay.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/kenessary-cave.webp',
             tours: [
                 { title: 'Astana & Burabay: 5-Day Tour', url: 'https://sheftour.kz/astana/' },
                 { title: 'Astana – Burabay', url: 'https://sheftour.kz/kazakhstan-dmc/astana-burabay/' }
@@ -182,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A memorial complex located in Panfilov Park, dedicated to the heroes of the Panfilov Division.',
             point: [375.0, 1378.0],
             color: 'blue',
-            image: '../wp-content/uploads/2026/02/kazakhstan-almaty-tour-4.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/panfilov-park.webp',
             tours: [
                 { title: 'Almaty: 4-Day Highlights', url: '../Almaty 4 days/index.html' },
                 { title: 'Almaty: 6-Day Grand Tour', url: '../Almaty 6 days/index.html' },
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A beautiful alpine lake known for its submerged forest and striking turquoise water.',
             point: [438.0, 1564.5],
             color: 'blue',
-            image: '../wp-content/uploads/2026/02/kazakhstan-almaty-tour-4.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/off-road-to-kaindy-lake.webp',
             tours: [
                 { title: 'Almaty: 4-Day Highlights', url: '../Almaty 4 days/index.html' },
                 { title: 'Almaty: 6-Day Grand Tour', url: '../Almaty 6 days/index.html' },
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A popular mountain and recreation area offering panoramic views of Almaty city.',
             point: [451.5, 1488.5],
             color: 'blue',
-            image: '../wp-content/uploads/2026/02/kazakhstan-almaty-tour-4.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/kok-tobe-hill-and-tv-tower.webp',
             tours: [
                 { title: 'Almaty: 4-Day Highlights', url: '../Almaty 4 days/index.html' },
                 { title: 'Almaty: 6-Day Grand Tour', url: '../Almaty 6 days/index.html' },
@@ -221,7 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A scenic and dramatic part of the Charyn Canyon, offering stunning landscapes.',
             point: [472.5, 1447.5],
             color: 'blue',
-            image: '../wp-content/uploads/2026/02/kazakhstan-almaty-tour-4.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/kurtogay-tract-charyn.webp',
             tours: [
                 { title: 'Almaty: 4-Day Highlights', url: '../Almaty 4 days/index.html' },
                 { title: 'Almaty: 6-Day Grand Tour', url: '../Almaty 6 days/index.html' },
@@ -234,7 +234,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'The highest olympic-sized ice skating rink in the world, located just outside Almaty.',
             point: [406.5, 1575.5],
             color: 'blue',
-            image: '../wp-content/uploads/2026/02/kazakhstan-almaty-tour-4.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/medeu-high-mountain-ice-rink.webp',
             tours: [
                 { title: 'Almaty: 4-Day Highlights', url: '../Almaty 4 days/index.html' },
                 { title: 'Almaty: 6-Day Grand Tour', url: '../Almaty 6 days/index.html' },
@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'An urban park in central Almaty, featuring the Zenkov Cathedral and Glory Memorial.',
             point: [397.5, 1378.0],
             color: 'blue',
-            image: '../wp-content/uploads/2026/02/kazakhstan-almaty-tour-4.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/panfilov-park.webp',
             tours: [
                 { title: 'Almaty: 4-Day Highlights', url: '../Almaty 4 days/index.html' },
                 { title: 'Almaty: 6-Day Grand Tour', url: '../Almaty 6 days/index.html' },
@@ -260,7 +260,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'The central square of Almaty, surrounded by important government buildings and monuments.',
             point: [353.5, 1439.0],
             color: 'blue',
-            image: '../wp-content/uploads/2026/02/kazakhstan-almaty-tour-4.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/republic-square-almaty.webp',
             tours: [
                 { title: 'Almaty: 4-Day Highlights', url: '../Almaty 4 days/index.html' },
                 { title: 'Almaty: 6-Day Grand Tour', url: '../Almaty 6 days/index.html' },
@@ -273,7 +273,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'The largest ski resort in Central Asia, offering fantastic slopes and alpine views.',
             point: [488.5, 1334.0],
             color: 'blue',
-            image: '../wp-content/uploads/2026/02/kazakhstan-almaty-tour-4.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/shymbulak-mountain-resort.webp',
             tours: [
                 { title: 'Almaty: 4-Day Highlights', url: '../Almaty 4 days/index.html' },
                 { title: 'Almaty: 6-Day Grand Tour', url: '../Almaty 6 days/index.html' },
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A stunning Russian Orthodox cathedral made entirely of wood without a single nail.',
             point: [408.5, 1435.0],
             color: 'blue',
-            image: '../wp-content/uploads/2026/02/kazakhstan-almaty-tour-4.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/almaty-sightseeing.webp',
             tours: [
                 { title: 'Almaty: 4-Day Highlights', url: '../Almaty 4 days/index.html' },
                 { title: 'Almaty: 6-Day Grand Tour', url: '../Almaty 6 days/index.html' },
@@ -299,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A magnificent limestone cave considered a sacred place with its own internal microclimate.',
             point: [238.8, 1065.8],
             color: 'purple',
-            image: '../wp-content/uploads/2026/02/kazakhstan-mahgystau-3.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/ak-mosque-cave.webp',
             tours: [
                 { title: 'Astana – Almaty – Turkistan: 7-Day Tour', url: 'https://sheftour.kz/kazakhstan-dmc/astana-almaty-turkistan/' }
             ]
@@ -310,7 +310,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A historic mausoleum dedicated to Arystan-Bab, a prominent mystic and teacher of Khoja Ahmed Yasawi.',
             point: [333.3, 1104.8],
             color: 'purple',
-            image: '../wp-content/uploads/2026/02/kazakhstan-mahgystau-3.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/mausoleum-of-arystan-bab.webp',
             tours: [
                 { title: 'Astana – Almaty – Turkistan: 7-Day Tour', url: 'https://sheftour.kz/kazakhstan-dmc/astana-almaty-turkistan/' }
             ]
@@ -321,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'An archaeological site featuring remnants of ancient settlements in the Turkestan region.',
             point: [319.8, 1132.8],
             color: 'purple',
-            image: '../wp-content/uploads/2026/02/kazakhstan-mahgystau-3.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/besik-tobe-settlement.webp',
             tours: [
                 { title: 'Astana – Almaty – Turkistan: 7-Day Tour', url: 'https://sheftour.kz/kazakhstan-dmc/astana-almaty-turkistan/' }
             ]
@@ -332,7 +332,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A modern tourism and entertainment complex styled as an ancient caravan serai.',
             point: [268.8, 1136.0],
             color: 'purple',
-            image: '../wp-content/uploads/2026/02/kazakhstan-mahgystau-3.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/evening-at-keruyen-saray.webp',
             tours: [
                 { title: 'Astana – Almaty – Turkistan: 7-Day Tour', url: 'https://sheftour.kz/kazakhstan-dmc/astana-almaty-turkistan/' }
             ]
@@ -343,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'A UNESCO World Heritage site and an outstanding piece of medieval architecture.',
             point: [300.8, 1051.8],
             color: 'purple',
-            image: '../wp-content/uploads/2026/02/kazakhstan-mahgystau-3.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/mausoleum-of-khoja-ahmed-yasawi.webp',
             tours: [
                 { title: 'Astana – Almaty – Turkistan: 7-Day Tour', url: 'https://sheftour.kz/kazakhstan-dmc/astana-almaty-turkistan/' }
             ]
@@ -354,9 +354,191 @@ document.addEventListener('DOMContentLoaded', function () {
             description: 'Ruins of an ancient trading city on the Great Silk Road.',
             point: [313.0, 988.8],
             color: 'purple',
-            image: '../wp-content/uploads/2026/02/kazakhstan-mahgystau-3.webp',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/03/img01.webp',
             tours: [
                 { title: 'Astana – Almaty – Turkistan: 7-Day Tour', url: 'https://sheftour.kz/kazakhstan-dmc/astana-almaty-turkistan/' }
+            ]
+        },
+        {
+            id: 'baikonur',
+            name: 'Baikonur Cosmodrome',
+            description: 'The world\'s first and largest operational space launch facility, located in the desert steppes of Kazakhstan.',
+            point: [515.0, 881.0],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/03/baikunur.webp',
+        },
+        {
+            id: 'uralsk',
+            name: 'Houses of merchants in Uralsk',
+            description: 'Several iconic 19th and early 20th-century mansions that belonged to the city\'s wealthy trading families. The most prominent are the Karev House, known as the city\'s first "skyscraper," and the Vanyushin Mansion, which received an architectural award at the 1893 World\'s Fair in Chicago.',
+            point: [730.0, 355.5],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/03/uralsk.webp',
+        },
+        {
+            id: 'aral-sea',
+            name: 'Aral Sea',
+            description: 'Aral Sea is now a symbol of one of the 20th century\'s most severe environmental disasters. Located between Kazakhstan and Uzbekistan, the sea has lost approximately 90% of its volume since the 1960s, primarily due to the diversion of its two main feeder rivers, the Amu Darya and Syr Darya, for large-scale Soviet cotton irrigation.',
+            point: [419.5, 698.5],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/03/aral.webp',
+        },
+        {
+            id: 'jochi-khan',
+            name: 'The Mausoleum of Jochi Khan',
+            description: 'The Mausoleum of Jochi Khan is a 13th-century, portal-dome structure located in the Ulytau region of Kazakhstan, roughly 50 km northeast of Zhezkazgan. Believed to be the resting place of Genghis Khan\'s eldest son, it features a distinctive double-shell, blue-tiled dome, and is a significant site of historical, cultural, and spiritual importance, recently restored with an attached visitor center.',
+            point: [597.0, 1011.0],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/03/dsc3591-kopia.webp',
+        },
+        {
+            id: 'bayanaul',
+            name: 'Bayanaul National Park',
+            description: 'Bayanaul National Park , established in 1985 as Kazakhstan\'s first national park, is a unique mountain oasis located in the northeastern Pavlodar Region. It spans over 68,000 hectares of diverse landscapes, including bizarre rock formations, pine forests, and pristine freshwater lakes, contrasting sharply with the surrounding semi-desert steppes.',
+            point: [644.0, 1398.0],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/03/bayanaul.webp',
+        },
+        {
+            id: 'kazakhstan-hotel',
+            name: 'Kazakhstan Hotel',
+            description: 'The Kazakhstan Hotel is a 26-story, 95-meter-tall hotel located in Almaty, Kazakhstan. Constructed between 1967 and 1972, it was designed by architects V. Konev and A. Chelyshev and built by the Alma-Ata branch of the Moscow Trust of Industrial Construction. The hotel features a distinctive Y-shaped floor plan and is situated on a hill overlooking the city, offering panoramic views of the surrounding mountains.',
+            point: [397.5, 1332.3],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/03/caption.webp',
+        },
+        {
+            id: 'katon-karagay',
+            name: 'Katon-Karagay National Park',
+            description: 'Katon-Karagay National Park is a national park in eastern Kazakhstan, located in the East Kazakhstan Region. It was established in 1997 and covers an area of 643,477 hectares. The park is known for its diverse landscapes, including mountains, forests, and lakes.',
+            point: [651.0, 1585.0],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/03/d40bae_5c2c072f516344219dcfd8dc9af0a199mv2.webp',
+        },
+        {
+            id: 'tien',
+            name: 'Tien Shan Mountains',
+            description: 'Tien Shan Mountains is a mountain range in Central Asia. It was established in 1997 and covers an area of 643,477 hectares. The park is known for its diverse landscapes, including mountains, forests, and lakes.',
+            point: [512.5, 1572.0],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/tien-shan-mountain-.webp',
+        },
+        {
+            id: 'altai',
+            name: 'Altai Mountains',
+            description: 'Altai Mountains is a mountain range in Central Asia. It was established in 1997 and covers an area of 643,477 hectares. The park is known for its diverse landscapes, including mountains, forests, and lakes.',
+            point: [711.5, 1699.0],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/trans-ili-alatau-mountains.webp',
+        },
+        {
+            id: 'kazakh-state-circus',
+            name: 'Kazakh State Circus',
+            description: 'The Kazakh State Circus in Almaty is an iconic cultural landmark known for its distinct Soviet modernist architecture resembling a traditional Kazakh yurt. As of March 2026, the circus is hosting the international program "Italian Circus Tony: Bellissimo," which is scheduled to run through March 24, 2026.',
+            point: [375.8, 1302.3],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/almaty-state-circus.webp',
+        },
+        {
+            id: 'akkum',
+            name: 'Singing Barkhan (Akkum-Kalkan)',
+            description: 'Singing dune (Singing Mountain) or Akkum-Kalkan (kaz,) is the name of a sand dune located on the territory of the national state Natural park of Altai-Emel. The singing dune is so called because it really knows how to sing. When a strong wind blows in a given place or you run down a dune from its top, you can hear a characteristic noise or howl that is emitted, as they say, by sand, or sand particles, from the friction of particles against each other. ',
+            point: [700.0, 652.3],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/tuyesu-sand-dunes.webp',
+        },
+        {
+            id: 'korgalzhyn',
+            name: 'Korgalzhyn State Nature Reserve',
+            description: 'The Korgalzhyn State Nature Reserve is a UNESCO World Heritage site and a vital wetland ecosystem located approximately 130–170 km southwest of Astana, Kazakhstan. Spanning over 543,000 hectares, it is renowned for hosting the world\'s northernmost breeding colony of pink flamingos and serving as a critical stopover for millions of migratory birds.',
+            point: [697.1, 838.0],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/03/korgalzhyn-nature-reserve-4-1024x686-1.webp',
+        },
+        {
+            id: 'complex',
+            name: 'Zhoshy Khan Complex',
+            description: 'The Zhoshy Khan Complex is a mausoleum complex located in the Ulytau District of the Karaganda Region, Kazakhstan. It is the burial site of Jochi Khan, the eldest son of Genghis Khan.',
+            point: [613.0, 1092.3],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/03/complex.webp',
+        },
+        {
+            id: 'bozzhyra',
+            name: 'Bozzhyra Tract',
+            description: 'The spectacular Bozzhyra Tract on the Ustyurt Plateau, known for its dramatic white limestone formations.',
+            point: [436.5, 551.5],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/bozzhyra-tract-ustyurt-plateau.webp',
+            tours: [
+                { title: 'Mangystau: 3-Day Express', url: 'https://sheftour.kz/mangystau-3-days/' },
+                { title: 'Mangystau: 5-Day Expedition', url: 'https://sheftour.kz/mangystau-5-days/' },
+                { title: 'Mangystau: 6-Day Grand Expedition', url: 'https://sheftour.kz/mangystau/' }
+            ]
+        },
+        {
+            id: 'tuzbair',
+            name: 'Tuzbair Salt Marsh',
+            description: 'Tuzbair Salt Marsh is a majestic natural monument representing the cascade of the Ustyurt Plateau dropping to an endless salt flat.',
+            point: [232.0, 484.0],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/tuzbair-salt-lake-and-sor.webp',
+            tours: [
+                { title: 'Mangystau: 3-Day Express', url: 'https://sheftour.kz/mangystau-3-days/' },
+                { title: 'Mangystau: 5-Day Expedition', url: 'https://sheftour.kz/mangystau-5-days/' },
+                { title: 'Mangystau: 6-Day Grand Expedition', url: 'https://sheftour.kz/mangystau/' }
+            ]
+        },
+        {
+            id: 'torysh',
+            name: 'Torysh (Valley of Balls)',
+            description: 'Torysh, also known as the Valley of Balls, features countless spherical rock formations spread across the steppe.',
+            point: [491.0, 660.5],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/torysh-valley-of-balls.webp',
+            tours: [
+                { title: 'Mangystau: 3-Day Express', url: 'https://sheftour.kz/mangystau-3-days/' },
+                { title: 'Mangystau: 5-Day Expedition', url: 'https://sheftour.kz/mangystau-5-days/' },
+                { title: 'Mangystau: 6-Day Grand Expedition', url: 'https://sheftour.kz/mangystau/' }
+            ]
+        },
+        {
+            id: 'kyzylkup',
+            name: 'Kyzylkup (Tiramisu Mountains)',
+            description: 'The Kyzylkup Tract, famously called the Tiramisu Mountains due to its distinct red, white, and brown striped layers.',
+            point: [350.5, 373.0],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/kyzylkup-tract-tiramisu-mountains.webp',
+            tours: [
+                { title: 'Mangystau: 3-Day Express', url: 'https://sheftour.kz/mangystau-3-days/' },
+                { title: 'Mangystau: 5-Day Expedition', url: 'https://sheftour.kz/mangystau-5-days/' },
+                { title: 'Mangystau: 6-Day Grand Expedition', url: 'https://sheftour.kz/mangystau/' }
+            ]
+        },
+        {
+            id: 'airakty',
+            name: 'Airakty (Valley of Castles)',
+            description: 'Airakty-Shomanay, known as the Valley of Castles, resembles ancient ruined towers and fortresses carved by nature.',
+            point: [403.0, 432.5],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2025/11/valley-of-castles.webp',
+            tours: [
+                { title: 'Mangystau: 3-Day Express', url: 'https://sheftour.kz/mangystau-3-days/' },
+                { title: 'Mangystau: 5-Day Expedition', url: 'https://sheftour.kz/mangystau-5-days/' },
+                { title: 'Mangystau: 6-Day Grand Expedition', url: 'https://sheftour.kz/mangystau/' }
+            ]
+        },
+        {
+            id: 'sherkala',
+            name: 'Mount Sherkala',
+            description: 'Mount Sherkala is an isolated rock formation shaped like a lion or a resting yurt, an iconic symbol of the Mangystau region.',
+            point: [519.0, 473.0],
+            color: 'red',
+            image: 'https://sheftour.kz/wp-content/uploads/2026/02/sherkala-mountain.webp',
+            tours: [
+                { title: 'Mangystau: 3-Day Express', url: 'https://sheftour.kz/mangystau-3-days/' },
+                { title: 'Mangystau: 5-Day Expedition', url: 'https://sheftour.kz/mangystau-5-days/' },
+                { title: 'Mangystau: 6-Day Grand Expedition', url: 'https://sheftour.kz/mangystau/' }
             ]
         }
     ];
@@ -374,38 +556,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const markerElements = [];
 
     // 5. Render Point Markers & Bind Popups
-    landmarks.forEach(landmark => {
+    landmarks.forEach((landmark, index) => {
         // Choose icon dynamically based on the landmark's color configuration
-        let currentIcon = pulsingIcon;
+        // Make all dots red
+        const pointColor = `hsl(0, 80%, 50%)`; // Red
+        const pointGlow = `hsla(0, 80%, 50%, 0.5)`;
+        const pointDark = `hsl(0, 80%, 40%)`;
+
         let className = 'custom-map-point';
-        if (landmark.color === 'green') {
-            className += ' green-point';
-            currentIcon = L.divIcon({
-                className: '',
-                html: `<div class="${className}"></div>`,
-                iconSize: [24, 24],
-                iconAnchor: [12, 12],
-                popupAnchor: [0, -15]
-            });
-        } else if (landmark.color === 'blue') {
-            className += ' blue-point';
-            currentIcon = L.divIcon({
-                className: '',
-                html: `<div class="${className}"></div>`,
-                iconSize: [24, 24],
-                iconAnchor: [12, 12],
-                popupAnchor: [0, -15]
-            });
-        } else if (landmark.color === 'purple') {
-            className += ' purple-point';
-            currentIcon = L.divIcon({
-                className: '',
-                html: `<div class="${className}"></div>`,
-                iconSize: [24, 24],
-                iconAnchor: [12, 12],
-                popupAnchor: [0, -15]
-            });
-        }
+        let customStyle = `--point-color: ${pointColor}; --point-glow: ${pointGlow}; --point-dark: ${pointDark};`;
+        let currentIcon = L.divIcon({
+            className: '',
+            html: `<div class="${className}" style="${customStyle}"></div>`,
+            iconSize: [24, 24],
+            iconAnchor: [12, 12],
+            popupAnchor: [0, -15]
+        });
 
         // Create an interactive marker point
         const marker = L.marker(landmark.point, {
@@ -470,7 +636,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         // Store the marker so we can adjust it later
-        markerElements.push({ marker: marker, baseClass: className });
+        markerElements.push({ marker: marker, baseClass: className, customStyle: customStyle });
     });
 
     // Helper Tool for YOU: Click anywhere on the map to find the Coordinates!
@@ -674,7 +840,7 @@ document.addEventListener('DOMContentLoaded', function () {
         markerElements.forEach(item => {
             const scaledIcon = L.divIcon({
                 className: '',
-                html: `<div class="${item.baseClass}" style="transform: scale(${scale}); transform-origin: center center;"></div>`,
+                html: `<div class="${item.baseClass}" style="${item.customStyle || ''} transform: scale(${scale}); transform-origin: center center;"></div>`,
                 iconSize: [24, 24],
                 iconAnchor: [12, 12],
                 popupAnchor: [0, -15]
